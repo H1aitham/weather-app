@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
-  String? CityName;
+  String? cityName;
   
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SearchPage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: TextField(
             onSubmitted: (data) {
-              CityName = data;
+              cityName = data;
             },
             decoration: InputDecoration(
               label: const Text(
