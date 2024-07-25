@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
-
+  String? CityName;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +20,14 @@ class SearchPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: TextField(
+            onSubmitted: (data) {
+              CityName = data;
+            },
             decoration: InputDecoration(
-              label: const Text("Search",style: TextStyle(color: Colors.orange),),
+              label: const Text(
+                "Search",
+                style: TextStyle(color: Colors.orange),
+              ),
               contentPadding: const EdgeInsets.all(40),
               hintText: 'Enter City Name',
               border: OutlineInputBorder(
