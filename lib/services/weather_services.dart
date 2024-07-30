@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:weather_app/model/weather_model.dart';
 
 class WeatherServices {
   String baseUrl = "http://api.weatherapi.com/v1";
@@ -12,7 +13,13 @@ class WeatherServices {
 
     Map<String, dynamic> data = jsonDecode(response.body);
 
-    String date = data['location']['localtime'];
-    String temp = data['forecast']['forecastday'][0]['avgtemp_c'];
+    var jsonData = data['forecast']['forecastday'][0];
+
+    WeatherModel weather = WeatherModel(
+        date: data['location']['localtime'],
+        temp: jsonData['avgtemp_c'],
+        maxTemp: jsonData['maxtemp_c'],
+        minTemp: jsonData['maxtemp_c'],
+        weatherSateName:  jsonData['condition']['text'],);
   }
 }
