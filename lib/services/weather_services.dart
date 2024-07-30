@@ -11,6 +11,8 @@ class WeatherServices {
     http.Response response = await http.get(url);
 
     Map<String, dynamic> data = jsonDecode(response.body);
-    print(data);
+
+    String date = data['location']['localtime'];
+    String temp = data['forecast']['forecastday'][0]['avgtemp_c'];
   }
 }
