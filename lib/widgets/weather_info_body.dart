@@ -5,69 +5,73 @@ class WeatherInfoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Alexandria',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-            ),
-          ),
-          const Text(
-            'updated at 23:46',
-            style: TextStyle(
-              fontSize: 24,
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset(
-                'assets/images/cloudy.png',
+    return Container(
+      color: Colors.orange,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Alexandria',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
               ),
-              const Text(
-                '17',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32,
+            ),
+            const Text(
+              'updated at 23:46',
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  'assets/images/cloudy.png',
                 ),
-              ),
-              const Column(
-                children: [
-                  Text(
-                    'Maxtemp: 24',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
+                const Text(
+                  '17',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
                   ),
-                  Text(
-                    'Mintemp: 16',
-                    style: TextStyle(
-                      fontSize: 16,
+                ),
+                const Column(
+                  children: [
+                    Text(
+                      'Maxtemp: 24',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          const Text(
-            'Ligh Rain',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
+                    Text(
+                      'Mintemp: 16',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 32,
+            ),
+            const Text(
+              'Ligh Rain',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
