@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class WeatherModel {
   String date;
   double temp;
@@ -13,13 +15,18 @@ class WeatherModel {
       required this.weatherSateName});
 
   factory WeatherModel.fromJson(dynamic data) {
-    var jsonData = data['forecast']['forecastday'][0];
+    var jsonData = data['forecast']['forecastday'][0]['day'];
 
     return WeatherModel(
         date: data['location']['localtime'],
         temp: jsonData['avgtemp_c'],
         maxTemp: jsonData['maxtemp_c'],
-        minTemp: jsonData['minTemp'],
+        minTemp: jsonData['mintemp_c'],
         weatherSateName: jsonData['condition']['text']);
+  }
+
+  @override
+  String toString() {
+    return 'tem=$temp minTemp=$minTemp date=$date';
   }
 }
