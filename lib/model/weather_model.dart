@@ -1,7 +1,5 @@
-import 'dart:math';
-
 class WeatherModel {
-  String date;
+  DateTime date;
   double temp;
   double maxTemp;
   double minTemp;
@@ -18,7 +16,7 @@ class WeatherModel {
     var jsonData = data['forecast']['forecastday'][0]['day'];
 
     return WeatherModel(
-        date: data['location']['localtime'],
+        date: DateTime.parse(data['location']['localtime']),
         temp: jsonData['avgtemp_c'],
         maxTemp: jsonData['maxtemp_c'],
         minTemp: jsonData['mintemp_c'],

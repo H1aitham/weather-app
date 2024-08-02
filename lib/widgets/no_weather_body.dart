@@ -3,14 +3,17 @@ import 'package:provider/provider.dart';
 import 'package:weather_app/model/weather_model.dart';
 import 'package:weather_app/provider/weather_provider.dart';
 import 'package:weather_app/widgets/weather_info_body.dart';
-
+WeatherModel? weatherData;
 class NoWeatherBody extends StatelessWidget {
-  WeatherModel? weatherData;
+  const NoWeatherBody({super.key});
+
+  
   @override
   Widget build(BuildContext context) {
+    weatherData =
+        Provider.of<WeatherProvider>(context, listen: true).weatherData;
     return Scaffold(
-      body: Provider.of<WeatherProvider>(context, listen: true  ).weatherData ==
-              null
+      body: weatherData == null
           ? const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Center(
@@ -33,7 +36,7 @@ class NoWeatherBody extends StatelessWidget {
                 ),
               ),
             )
-          : WeatherInfoBody(),
+          : const WeatherInfoBody(),
     );
   }
 }
