@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:weather_app/model/weather_model.dart';
+import 'package:weather_app/provider/weather_provider.dart';
 import 'package:weather_app/services/weather_services.dart';
 
 class SearchPage extends StatelessWidget {
@@ -28,6 +30,7 @@ class SearchPage extends StatelessWidget {
               WeatherServices services = WeatherServices();
               WeatherModel weather =
                   await services.getWeather(cityName: cityName!);
+              Provider.of<WeatherProvider>(context).weatherData = weather;
               print(weather);
             },
             decoration: InputDecoration(
