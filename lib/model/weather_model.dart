@@ -27,4 +27,23 @@ class WeatherModel {
   String toString() {
     return 'tem=$temp minTemp=$minTemp date=$date';
   }
+
+  String getImage() {
+    if (weatherSateName == 'Clear' || weatherSateName == 'Light Cloud') {
+      return 'assets/images/cloudy.png';
+    } else if (weatherSateName == 'Sleet' ||
+        weatherSateName == 'Snow' ||
+        weatherSateName == 'Hail') {
+      return 'assets/images/snow.png';
+    } else if (weatherSateName == 'Heavy Cloud') {
+      return 'assets/images/cloud.png';
+    } else if (weatherSateName == 'Light Rain' ||
+        weatherSateName == 'Heavy Rain' ||
+        weatherSateName == 'Showers') {
+      return 'assets/images/rainy.png';
+    } else if (weatherSateName == 'Thunderstorm') {
+      return 'assets/images/thunderstorm.pag';
+    }
+    return 'assets/images/clear.png';
+  }
 }

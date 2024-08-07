@@ -16,7 +16,7 @@ class WeatherApp extends StatelessWidget {
       create: (context) {
         return WeatherProvider();
       },
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeView(),
       ),

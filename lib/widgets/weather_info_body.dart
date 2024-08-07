@@ -36,7 +36,7 @@ class WeatherInfoBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  'assets/images/cloudy.png',
+                  weatherData!.getImage(),
                 ),
                  Text(
                   weatherData!.temp.toInt().toString(),
